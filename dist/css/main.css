@@ -1,0 +1,156 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+/* 0. Reset ================================= */
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+@use 'reset';
+/* 1. Main Layout ================================= */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background: url(https://i.pinimg.com/originals/4a/7b/a5/4a7ba5381e9cc34c18c23f7eb8a5402e.jpg), #276580;
+	background-blend-mode: luminosity;
+	border: solid #d2b847 2px;
+	border-radius: 10px;
+	padding: 30px;
+}
+
+/* 2. Content ================================= */
+.form-container {
+	-webkit-justify-content: center;
+	        justify-content: center;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	        align-items: center;
+}
+
+.form-container > form {
+	max-width: 500px;
+	color: white;
+	background-color: #d2b847;
+	border-radius: 10px;
+	padding: 10px;
+	width: 400px;
+	box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-container > form .label {
+	font-family: 'Notable', sans-serif;
+	font-size: 20px;
+	margin-bottom: 10px;
+	font-weight: 500;
+	display: block;
+	text-align: center;
+}
+
+.form-container > form .input-and-button {
+	text-align: center;
+}
+
+.form-container > form .input-and-button > input {
+	background: #fffefe;
+	border: none;
+	border-radius: 10px;
+	padding: 5px;
+	margin-bottom: 10px;
+	box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-container > form .input-and-button > button {
+	background: #a72f11;
+	font-family: 'Notable', sans-serif;
+	border: none;
+	border-radius: 5px;
+	padding: 5px;
+	letter-spacing: 2px;
+	margin-bottom: 10px;
+	color: white;
+	box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form-container .value-menu {
+	font-family: 'Notable', sans-serif;
+	color: #d2b847;
+	font-size: 50px;
+	margin: 40px;
+}
+
+.form-container p {
+	color: #5c9cf0;
+	font-size: 14px;
+}
+
+.form-container h2 {
+	color: white;
+}
+
+.form-container img {
+	width: 50px;
+}
+
+.form-container img:nth-child(2) {
+	width: 200px;
+	height: auto;
+}
+
+.form-container .classResults {
+	text-align: center;
+	background: #dccdec;
+}
+
+.form-container .classResults .business-item h2 {
+	color: white;
+}
+
+.form-container .classResults .business-item p {
+	color: blueviolet;
+}
+
+.form-container .classResults .business-item img {
+	width: 200px;
+	height: auto;
+}
+
+.api-container .map-container #map {
+	width: 40%;
+	height: 500px;
+	margin-top: 20px;
+	box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 10px;
+}
+
+.gifs-go-here {
+	text-align: center;
+}
+
+.gif {
+	border: #d2b847 solid 6px;
+	border-radius: 10px;
+	width: 230px;
+	height: 230px;
+	margin: 0 auto;
+	margin: 10px;
+	box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*# sourceMappingURL=main.css.map */

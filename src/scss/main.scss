@@ -1,0 +1,181 @@
+/* 
+==============================================
+CONTENT:	Project Name Here
+AUTHOR:		Your Name Here
+==============================================
+
+TABLE OF CONTENTS:
+
+0. Reset
+1. Main Layout
+2. Content
+
+==============================================
+*/
+
+/* 0. Reset ================================= */
+
+/* 
+If you want to add partials, use Sass Modules via @use:
+@use 'variables';
+
+Usage: partial-name.variable/mixin/function-name:
+background: variables.$primary-color;
+*/
+
+@use 'reset';
+
+/* 1. Main Layout ================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	// background: rgb(39, 101, 128);
+	background: url(https://i.pinimg.com/originals/4a/7b/a5/4a7ba5381e9cc34c18c23f7eb8a5402e.jpg),  rgb(39, 101, 128);
+	background-blend-mode: luminosity;
+	border: solid rgb(210, 184, 71) 2px;
+	border-radius: 10px;
+	padding:30px;
+}
+
+/* 2. Content ================================= */
+
+.form-container{
+	justify-content: center;
+	display: flex;
+	// flex-direction: column;
+	align-items: center;
+	
+	
+	>form{
+		
+		max-width: 500px;
+		color: white;
+		background-color: rgb(210, 184, 71);
+		border-radius: 10px;
+		padding: 10px;
+		width: 400px;
+		box-shadow:  1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
+		.label{
+			font-family: 'Notable', sans-serif;
+			font-size: 20px;
+			margin-bottom: 10px;
+			font-weight: 500;
+			display: block;
+			text-align: center;
+		}
+		.input-and-button{
+			text-align: center;
+			>input{
+				background: rgb(255, 254, 254);
+				border: none;
+				border-radius:10px ;
+				padding: 5px;
+				margin-bottom: 10px;
+				box-shadow:  1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+			>button{
+				background: rgb(167, 47, 17);
+				font-family: 'Notable', sans-serif;
+				border: none;
+				border-radius:5px ;
+				padding: 5px;
+				letter-spacing: 2px;
+				margin-bottom: 10px;
+				color: white;
+				box-shadow:  1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+		}
+		
+	}
+	.value-menu{
+		font-family: 'Notable', sans-serif;
+		color: rgb(210, 184, 71);
+		font-size: 50px;
+		margin:40px;
+	}
+
+	p{
+		color: rgb(92, 156, 240);
+		font-size: 14px;
+		
+	}
+	h2{
+		color: white;
+	}
+	img{
+		width: 50px;
+		&:nth-child(2){
+			width: 200px;
+		height:auto;
+		}
+		
+	}
+	
+
+	.classResults{
+		text-align: center;
+		background: rgb(220, 205, 236);
+		// display: none;
+		.business-item{
+		
+		h2{
+			color:white;
+		}
+		p{
+			color: blueviolet;
+		}
+		img{
+			width: 200px;
+			height: auto;
+		}
+	}
+		
+	}
+	
+}
+.api-container{
+	// display: flex;
+	// flex-direction: row;
+	// flex-wrap: wrap;
+
+	.map-container{
+	
+	#map{
+		width:40%;
+		height:500px;
+		margin-top: 20px;
+		box-shadow:  1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
+		border-radius: 10px;
+		}
+	}
+	// .review-container{
+	// 	margin-top: 20px;
+	// 	width:50vw;
+	// 	border: solid white 1px;
+	// 	.review{
+	// 		width: 2rem;
+	// 		height:1rem;
+	// 		background: white;
+	// 	}
+	// }	
+}
+
+
+.gifs-go-here {
+	text-align: center;
+	
+}
+.gif{
+	
+	border: rgb(210, 184, 71) solid 6px;
+	border-radius: 10px;
+	width: 230px;
+	height: 230px;
+	margin: 0 auto;
+	margin:10px;
+	box-shadow:  1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}

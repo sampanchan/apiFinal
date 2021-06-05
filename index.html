@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="x-ua-compatible" content="ie=edge" />
+		<title>Value Menu API</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="dist/css/main.css" />
+
+	</head>
+
+	<body>
+		<div class="form-container">
+			<h1 class="value-menu">VALUE</h1>
+			<form method="get" name="place_search" class="api-form" id="form">
+				<p class="message"></p>
+				<div id="title">
+					<label class="label">What'll have???</label>	
+				</div>
+				<div class="input-and-button">
+					<input name="place" id="place" value="" />
+				
+				
+					<button type="submit" class="get">Search</button>
+				</div>
+						
+			</form>
+			<h1 class="value-menu">MENU</h1>
+		</div>
+		<div class="classResults"></div>
+
+		<div class="api-container">
+			<div class="map-container">
+				<div id="map"></div>
+			</div>
+			<div class="review-container">
+				<div class="review"></div>
+			</div>
+		</div>
+		
+		
+		<div class= "wrapper">
+			<section class= "gif-section">
+				<p class= "gifs-go-here">
+			
+			
+			</section>
+		</div>
+		
+		<div class="background"></div>
+		
+			<script src="dist/js/maps.js"></script>
+			
+			<script src="dist/js/yelpReviews.js"></script>
+			<script src="dist/js/giphy.js"></script>
+			<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="dist/js/main.js"></script>
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBN8YgsGRhmpj0vSQlLl5EViZa3MGbrjr8&callback=gMap.ready&libraries=places&v=weekly"
+			async></script>
+	</body>
+</html>
