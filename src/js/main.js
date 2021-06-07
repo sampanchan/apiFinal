@@ -105,9 +105,9 @@ class Main{
            locationEl.textContent = location;
 
            //image 
-        //    const photoEl = document.createElement('img');
-        //    businessItemEl.appendChild(photoEl);
-        //    photoEl.setAttribute('src', photo);
+           const photoEl = document.createElement('img');
+           businessItemEl.appendChild(photoEl);
+           photoEl.setAttribute('src', photo);
 
            //categories
            const category = business.categories
@@ -174,11 +174,37 @@ class Main{
        }
 
        handleYelpReviewResults = (evt) =>{
-           const reviews = evt.detail
-           console.log('got reviews', reviews)
+           const reviews = evt.detail.results;
+           console.log('got reviews', reviews);
+        
+        
+            const apiContainer = document.querySelector('.api-container');
+
+            const reviewContainer = document.querySelector('.review-container');
+           
+
+            
+
+           for (let i = 0; i < reviews.length; i++ ){
+
+                console.log('got a name')
+                
+                const review = reviews[i]
+                const name = review.user.name
+                const userImage = review.user.image_url
+
+                const reviewEl = document.createElement('div');
+                reviewEl.setAttribute('class', 'review');
+                reviewEl.appendChild(reviewContainer);
 
 
-           //dom manipluation 
+                //name
+                const nameEl = document.createElement('h2');
+                nameEl.setAttribute('class', '.name')
+                reviewEl.appendChild(nameEl);
+                nameEl.textContent = name; 
+
+           } 
 
 
        }

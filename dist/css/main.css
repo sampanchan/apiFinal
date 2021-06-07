@@ -40,6 +40,8 @@ body {
 	        justify-content: center;
 	display: -webkit-flex;
 	display: flex;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
 	-webkit-align-items: center;
 	        align-items: center;
 }
@@ -51,6 +53,7 @@ body {
 	border-radius: 10px;
 	padding: 10px;
 	width: 400px;
+	margin-top: 5px;
 	box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -88,11 +91,15 @@ body {
 	box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.form-container .value-menu {
+.form-container .header {
+	text-align: center;
+}
+
+.form-container .header .value-menu {
 	font-family: 'Notable', sans-serif;
 	color: #d2b847;
 	font-size: 50px;
-	margin: 40px;
+	margin: 5px;
 }
 
 .form-container p {
@@ -105,12 +112,7 @@ body {
 }
 
 .form-container img {
-	width: 50px;
-}
-
-.form-container img:nth-child(2) {
-	width: 200px;
-	height: auto;
+	width: 0px;
 }
 
 .form-container .classResults {
@@ -126,17 +128,71 @@ body {
 	color: blueviolet;
 }
 
-.form-container .classResults .business-item img {
-	width: 200px;
-	height: auto;
-}
-
 .api-container .map-container #map {
-	width: 40%;
+	width: 100%;
 	height: 500px;
 	margin-top: 20px;
-	box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2), 1px 6px 20px 0 rgba(0, 0, 0, 0.19);
+	box-shadow: 1px 4px 8px 0 rgba(205, 189, 70, 0.516), 1px 6px 20px 0 rgba(205, 189, 70, 0.516);
 	border-radius: 10px;
+}
+
+.api-container .map-container h2 {
+	color: #2a2a6a;
+	font-family: 'Notable', sans-serif;
+}
+
+.api-container .map-container h3 {
+	font-family: 'Oxanium', cursive;
+	color: #d2b847;
+	font-size: 14px;
+}
+
+.api-container .map-container h4 {
+	color: #7fd2ff;
+	font-family: 'Oxanium', cursive;
+	font-size: 14px;
+}
+
+.api-container .map-container img {
+	width: 100px;
+}
+
+.api-container .map-container .dollar-sign-price,
+.api-container .map-container .rating,
+.api-container .map-container .transaction_type {
+	font-family: 'Oxanium', cursive;
+	color: #2a2a6a;
+	font-weight: bold;
+}
+
+.api-container .review-container {
+	width: 100vw;
+	margin: 0 auto;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: column;
+	        flex-direction: column;
+	-webkit-align-content: center;
+	        align-content: center;
+}
+
+.api-container .review-container .review {
+	width: 70%;
+	height: 15vh;
+	background: #93bce9;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.api-container .review-container .name {
+	color: white;
+}
+
+.tags {
+	font-family: 'Notable', sans-serif;
+	color: #d2b847;
+	font-size: 15px;
+	text-align: center;
 }
 
 .gifs-go-here {

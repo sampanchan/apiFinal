@@ -75,10 +75,10 @@ var Main = /*#__PURE__*/function () {
         var locationEl = document.createElement('h3');
         businessItemEl.appendChild(locationEl);
         locationEl.textContent = location; //image 
-        //    const photoEl = document.createElement('img');
-        //    businessItemEl.appendChild(photoEl);
-        //    photoEl.setAttribute('src', photo);
-        //categories
+
+        var photoEl = document.createElement('img');
+        businessItemEl.appendChild(photoEl);
+        photoEl.setAttribute('src', photo); //categories
 
         var category = business.categories;
         var categoryEl = document.createElement('h4');
@@ -131,8 +131,25 @@ var Main = /*#__PURE__*/function () {
     });
 
     _defineProperty(this, "handleYelpReviewResults", function (evt) {
-      var reviews = evt.detail;
-      console.log('got reviews', reviews); //dom manipluation 
+      var reviews = evt.detail.results;
+      console.log('got reviews', reviews);
+      var apiContainer = document.querySelector('.api-container');
+      var reviewContainer = document.querySelector('.review-container');
+
+      for (var i = 0; i < reviews.length; i++) {
+        console.log('got a name');
+        var review = reviews[i];
+        var name = review.user.name;
+        var userImage = review.user.image_url;
+        var reviewEl = document.createElement('div');
+        reviewEl.setAttribute('class', 'review');
+        reviewEl.appendChild(reviewContainer); //name
+
+        var nameEl = document.createElement('h2');
+        nameEl.setAttribute('class', '.name');
+        reviewEl.appendChild(nameEl);
+        nameEl.textContent = name;
+      }
     });
 
     this.setUpListener(); // this.getMapCenter()
