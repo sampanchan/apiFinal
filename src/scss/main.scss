@@ -24,6 +24,8 @@ background: variables.$primary-color;
 */
 
 @use 'reset';
+@use "variables";
+@use "mixins";
 
 /* 1. Main Layout ================================= */
 
@@ -35,9 +37,13 @@ body {
 	// background: rgb(39, 101, 128);
 	background: url(https://i.pinimg.com/originals/4a/7b/a5/4a7ba5381e9cc34c18c23f7eb8a5402e.jpg),  rgb(39, 101, 128);
 	background-blend-mode: luminosity;
+	// background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 	border: solid rgb(210, 184, 71) 2px;
 	border-radius: 10px;
-	padding:30px;
+	// padding:30px;
+	// overflow: hidden;
 }
 
 /* 2. Content ================================= */
@@ -143,20 +149,44 @@ body {
 	
 }
 .api-container{
-	// display: flex;
-	// flex-direction: row;
+	display: flex;
+	flex-direction: column;
+	
 	// flex-wrap: wrap;
+	@include mixins.bp-large{
+		flex-direction: row;
+		// align-items: center;;
+	}
 
 	.map-container{
-	
+	.tags{
+		font-family: 'Notable', sans-serif;
+		color: rgb(210, 184, 71);
+		font-size: 15px;
+		text-align: center;
+		margin: 20px;
+		@include mixins.bp-large{
+			margin-bottom: 20px ;
+		}
+		}
 	
 	#map{
-		width:100%;
+		width:95%;
 		height:500px;
 		margin-top: 20px;
+		margin: 0 auto;
+		margin-bottom: 20px;
 		box-shadow:  1px 4px 8px 0 rgba(205, 189, 70, 0.516), 1px 6px 20px 0 rgba(205, 189, 70, 0.516);
 		border-radius: 10px;
+		text-align: center;
+
+		@include mixins.bp-large{
+			width: 50vw;
+			margin-left: 3% ;
+    		// margin: 10rem auto;
 		}
+
+	}
 	h2{
 		color: rgb(42, 42, 106);
 		font-family: 'Notable', sans-serif;
@@ -191,33 +221,106 @@ body {
 		display: flex;
 		flex-direction: column;
 		align-content: center;
+
+		
+		
+		@include mixins.bp-large{
+			max-width: 45%;
+			flex-direction: column;
+			align-content: center;
+    		
+		}
+		.tags{
+			margin: 0;
+			font-family: 'Notable', sans-serif;
+			color: rgb(210, 184, 71);
+			font-size: 10px;
+			text-align: center;
+			margin: 20px;
+			
+			}
 		
 		.review{
 			// margin: 10px auto;
-			width: 70%;
-			height: 15vh;
+			// width: 70%;
+			// height: 35vh;
 			background: rgb(147, 188, 233);
 			border-radius: 10px;
 			margin:10px;
+			text-align: center;
 			
+			// text-overflow: ellipsis;
+			.review-header{
+				display: flex;
+			>h2{
+				color:white;
+				font-family: 'Oxanium', cursive;
+				font-size: 15px;
+				text-align: center;
+			}
+			img{
+				// width:80px;
+				border-radius: 10px;
+				max-width: 60px;
+				// margin: 0 auto;
+
+				margin-top: 10px;
+				text-align: center;
+			}
+			}
+			
+			.name{
+				margin: 20px ;
+			}
+			p{
+				color: white;
+				text-overflow: ellipsis;
+				margin-bottom: 10px;
+				// text-align: center;
+			}
+			.text{
+				margin:20px;
+			}
+			.url-p{
+				word-break: break-all;
+				margin: 20px;
+			}
+			a{
+				text-decoration: none;
+				color:rgb(16, 92, 124);
+				font-family: 'Oxanium', cursive;
+				font-size: 12px;
+				max-width: 100px;
+				text-align: left;
+				
+				
+			}
 		}
-		.name{
-			color:white;
-		}
+		
 	}	
 }
-.tags{
+
+.gif-section{
+	.tags{
 	font-family: 'Notable', sans-serif;
-	color: rgb(210, 184, 71);
+	color: rgb(186, 184, 173);
 	font-size: 15px;
 	text-align: center;
+	margin: 20px;
+	@include mixins.bp-large{
+		margin-bottom: 20px;
+	}
+	
 }
 
 
 .gifs-go-here {
 	text-align: center;
+	margin-top: 20px;
 	
 }
+}
+
 
 .gif{
 	

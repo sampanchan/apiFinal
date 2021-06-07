@@ -171,6 +171,7 @@ class Main{
                 gifContainerParagraph.appendChild(newGifImage) 
                   
               }
+              
        }
 
        handleYelpReviewResults = (evt) =>{
@@ -180,7 +181,11 @@ class Main{
         
             const apiContainer = document.querySelector('.api-container');
 
+
+           
+
             const reviewContainer = document.querySelector('.review-container');
+            reviewContainer.innerHTML= ''
            
 
             
@@ -192,17 +197,67 @@ class Main{
                 const review = reviews[i]
                 const name = review.user.name
                 const userImage = review.user.image_url
+                const rating = review.rating
+                const text = review.text
+                const url = review.url
 
                 const reviewEl = document.createElement('div');
                 reviewEl.setAttribute('class', 'review');
-                reviewEl.appendChild(reviewContainer);
+                reviewContainer.appendChild(reviewEl);
+
+                const titleEl = document.createElement('p')
+                titleEl.setAttribute('class', 'tags');
+                titleEl.innerHTML="Review"
+                reviewContainer.appendChild(titleEl);
+
+                const reviewHeader = document.createElement('div');
+                reviewHeader.setAttribute('class', 'review-header');
+
+                
+
 
 
                 //name
                 const nameEl = document.createElement('h2');
-                nameEl.setAttribute('class', '.name')
-                reviewEl.appendChild(nameEl);
+                nameEl.setAttribute('class', 'name');
+                reviewHeader.appendChild(nameEl)
+                reviewEl.appendChild(reviewHeader);
                 nameEl.textContent = name; 
+
+                //image
+                const imageEl = document.createElement('img');
+                imageEl.setAttribute('src', userImage);
+                reviewHeader.appendChild(imageEl)
+                reviewEl.appendChild(reviewHeader);
+
+                // rating
+                const ratingEl = document.createElement('p');
+                ratingEl.setAttribute('class', 'rating');
+                reviewEl.appendChild(ratingEl);
+                ratingEl.textContent = rating + '/5😋';
+
+                //comment
+                const textEl = document.createElement('p')
+                textEl.setAttribute('class', 'text');
+                reviewEl.appendChild(textEl);
+                textEl.textContent = (text)
+
+                //url
+
+                const urlP = document.createElement('p')
+                urlP.setAttribute('class', 'url-p')
+
+
+                const urlEl = document.createElement('a');
+                urlEl.setAttribute('href', url)
+                urlEl.setAttribute('target', '_blank');
+
+                urlP.appendChild(urlEl)
+                reviewEl.appendChild(urlP);
+
+                urlEl.textContent = (url)
+
+
 
            } 
 

@@ -135,20 +135,55 @@ var Main = /*#__PURE__*/function () {
       console.log('got reviews', reviews);
       var apiContainer = document.querySelector('.api-container');
       var reviewContainer = document.querySelector('.review-container');
+      reviewContainer.innerHTML = '';
 
       for (var i = 0; i < reviews.length; i++) {
         console.log('got a name');
         var review = reviews[i];
         var name = review.user.name;
         var userImage = review.user.image_url;
+        var rating = review.rating;
+        var text = review.text;
+        var url = review.url;
         var reviewEl = document.createElement('div');
         reviewEl.setAttribute('class', 'review');
-        reviewEl.appendChild(reviewContainer); //name
+        reviewContainer.appendChild(reviewEl);
+        var titleEl = document.createElement('p');
+        titleEl.setAttribute('class', 'tags');
+        titleEl.innerHTML = "Review";
+        reviewContainer.appendChild(titleEl);
+        var reviewHeader = document.createElement('div');
+        reviewHeader.setAttribute('class', 'review-header'); //name
 
         var nameEl = document.createElement('h2');
-        nameEl.setAttribute('class', '.name');
-        reviewEl.appendChild(nameEl);
-        nameEl.textContent = name;
+        nameEl.setAttribute('class', 'name');
+        reviewHeader.appendChild(nameEl);
+        reviewEl.appendChild(reviewHeader);
+        nameEl.textContent = name; //image
+
+        var imageEl = document.createElement('img');
+        imageEl.setAttribute('src', userImage);
+        reviewHeader.appendChild(imageEl);
+        reviewEl.appendChild(reviewHeader); // rating
+
+        var ratingEl = document.createElement('p');
+        ratingEl.setAttribute('class', 'rating');
+        reviewEl.appendChild(ratingEl);
+        ratingEl.textContent = rating + '/5😋'; //comment
+
+        var textEl = document.createElement('p');
+        textEl.setAttribute('class', 'text');
+        reviewEl.appendChild(textEl);
+        textEl.textContent = text; //url
+
+        var urlP = document.createElement('p');
+        urlP.setAttribute('class', 'url-p');
+        var urlEl = document.createElement('a');
+        urlEl.setAttribute('href', url);
+        urlEl.setAttribute('target', '_blank');
+        urlP.appendChild(urlEl);
+        reviewEl.appendChild(urlP);
+        urlEl.textContent = url;
       }
     });
 
