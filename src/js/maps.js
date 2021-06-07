@@ -80,9 +80,6 @@ class GoogleMapApi{
                 const position = { lat: lat, lng: lng};
                 const name = business.name;
                 const address = business.formatted_address;
-                // const hours = business.opening_hours.isOpen(name); // hours?
-                // phone#
-                // const number = business.getPhoneNumber();
                 const number = business.formatted_phone_number;
                 const icon = business.icon;
                 const image = business.photos[0].getUrl();
@@ -96,32 +93,24 @@ class GoogleMapApi{
                 console.log('businessitemcreated')
 
                 // Name
-
                 const nameEl = document.createElement('h2');
-                // businessItemEl.setAttribute('class', 'name-item');
                 businessItemEl.appendChild(nameEl);
                 nameEl.textContent = name;
 
                 // address
-
                 const addressEl = document.createElement('p');
-                // listContainer.setAttribute('class', 'address-p');
                 listContainer.appendChild(addressEl);
                 addressEl.textContent = address;
 
                 //image works
-
                 const imageEl = document.createElement('img');
                 businessItemEl.appendChild(imageEl);
                 imageEl.setAttribute('src', image)
 
                 //rating
-
                 const ratingEl = document.createElement('p');
                 businessItemEl.appendChild(ratingEl);
                 ratingEl.textContent = rating + "/5"
-
-
                 
                 this.createMarker({
                     lat: business.geometry.location.lat(),

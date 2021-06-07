@@ -59,10 +59,7 @@ var Main = /*#__PURE__*/function () {
         var price = business.price;
         var rating = business.rating;
         var transactionType = business.transactions;
-        var id = business.id; //    //fire request 
-        //    // get- reviews look at line 43/44 fire custome event 
-        //    // new listener and handle 
-        //    // Business Item
+        var id = business.id; //    // Business Item
 
         var businessItemEl = document.createElement('div');
         businessItemEl.setAttribute('class', 'business-item'); //    //Name
@@ -113,7 +110,7 @@ var Main = /*#__PURE__*/function () {
         var searchEvent = new CustomEvent('add-marker', {
           detail: markerInfo
         });
-        document.dispatchEvent(searchEvent); //Giphy
+        document.dispatchEvent(searchEvent);
       }
     });
 

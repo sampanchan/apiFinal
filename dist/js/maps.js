@@ -79,10 +79,7 @@ var GoogleMapApi = /*#__PURE__*/function () {
             lng: lng
           };
           var name = business.name;
-          var address = business.formatted_address; // const hours = business.opening_hours.isOpen(name); // hours?
-          // phone#
-          // const number = business.getPhoneNumber();
-
+          var address = business.formatted_address;
           var number = business.formatted_phone_number;
           var icon = business.icon;
           var image = business.photos[0].getUrl();
@@ -94,13 +91,11 @@ var GoogleMapApi = /*#__PURE__*/function () {
           listContainer.appendChild(businessItemEl);
           console.log('businessitemcreated'); // Name
 
-          var nameEl = document.createElement('h2'); // businessItemEl.setAttribute('class', 'name-item');
-
+          var nameEl = document.createElement('h2');
           businessItemEl.appendChild(nameEl);
           nameEl.textContent = name; // address
 
-          var addressEl = document.createElement('p'); // listContainer.setAttribute('class', 'address-p');
-
+          var addressEl = document.createElement('p');
           listContainer.appendChild(addressEl);
           addressEl.textContent = address; //image works
 

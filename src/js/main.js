@@ -75,19 +75,6 @@ class Main{
            const transactionType = business.transactions
            const id = business.id
 
-
-        
-
-        //    //fire request 
-        //    // get- reviews look at line 43/44 fire custome event 
-        //    // new listener and handle 
-
-        
-
-            
-          
-           
-
         //    // Business Item
            const businessItemEl = document.createElement('div');
            businessItemEl.setAttribute('class', 'business-item');
@@ -147,10 +134,6 @@ class Main{
 
             const searchEvent = new CustomEvent('add-marker', { detail: markerInfo })
             document.dispatchEvent(searchEvent)
-
-
-
-            //Giphy
 
            
                        

@@ -219,6 +219,11 @@ body {
 .form-container .header {
   text-align: center;
 }
+@media screen and (min-width: 992px) {
+  .form-container .header {
+    display: flex;
+  }
+}
 .form-container .header .value-menu {
   font-family: "Notable", sans-serif;
   color: #d2b847;
@@ -253,12 +258,13 @@ body {
 @media screen and (min-width: 992px) {
   .api-container {
     flex-direction: row;
+    align-items: center;
   }
 }
 .api-container .map-container .tags {
   font-family: "Notable", sans-serif;
   color: #d2b847;
-  font-size: 15px;
+  font-size: 25px;
   text-align: center;
   margin: 20px;
 }
@@ -280,6 +286,7 @@ body {
 @media screen and (min-width: 992px) {
   .api-container .map-container #map {
     width: 50vw;
+    height: 70vh;
     margin-left: 3%;
   }
 }
@@ -325,7 +332,7 @@ body {
   margin: 0;
   font-family: "Notable", sans-serif;
   color: #d2b847;
-  font-size: 10px;
+  font-size: 15px;
   text-align: center;
   margin: 20px;
 }
@@ -357,6 +364,7 @@ body {
   color: white;
   text-overflow: ellipsis;
   margin-bottom: 10px;
+  font-family: "Oxanium", cursive;
 }
 .api-container .review-container .review .text {
   margin: 20px;
@@ -377,7 +385,7 @@ body {
 .gif-section .tags {
   font-family: "Notable", sans-serif;
   color: #bab8ad;
-  font-size: 15px;
+  font-size: 25px;
   text-align: center;
   margin: 20px;
 }
