@@ -111,7 +111,6 @@ class GoogleMapApi{
                 const ratingEl = document.createElement('p');
                 businessItemEl.appendChild(ratingEl);
                 ratingEl.textContent = rating + "/5"
-                
                 this.createMarker({
                     lat: business.geometry.location.lat(),
                     lng: business.geometry.location.lng(),

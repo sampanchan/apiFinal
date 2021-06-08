@@ -110,7 +110,7 @@ var Main = /*#__PURE__*/function () {
         var searchEvent = new CustomEvent('add-marker', {
           detail: markerInfo
         });
-        document.dispatchEvent(searchEvent);
+        document.dispatchEvent(searchEvent); //Giphy
       }
     });
 

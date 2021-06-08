@@ -135,6 +135,10 @@ class Main{
             const searchEvent = new CustomEvent('add-marker', { detail: markerInfo })
             document.dispatchEvent(searchEvent)
 
+
+
+            //Giphy
+
            
                        
 
