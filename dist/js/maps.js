@@ -144,6 +144,14 @@ var GoogleMapApi = /*#__PURE__*/function () {
       _this.createMarker(markerInfo);
     });
 
+    _defineProperty(this, "clearMarkers", function () {
+      _this.marker.forEach(function (marker) {
+        marker.setMap(null);
+      });
+
+      _this.marker = [];
+    });
+
     _defineProperty(this, "handleMarkers", function (evt) {
       console.log(evt.detail);
     });
@@ -157,7 +165,9 @@ var GoogleMapApi = /*#__PURE__*/function () {
     value: function setupListener() {
       document.addEventListener('get-map-center', this.handleMapCenterRequest);
       document.addEventListener('business-search', this.handleMarkers);
-      document.addEventListener('add-marker', this.handleMarker);
+      document.addEventListener('add-marker', this.handleMarker); //clearing markers
+
+      document.addEventListener('clear-markers', this.clearMarkers);
     }
   }, {
     key: "createMarker",
@@ -194,14 +204,6 @@ var GoogleMapApi = /*#__PURE__*/function () {
         document.dispatchEvent(reviewEvent);
       });
       this.marker.push(marker);
-    }
-  }, {
-    key: "clearMarkers",
-    value: function clearMarkers() {
-      this.marker.forEach(function (marker) {
-        marker.setMap(null);
-      });
-      this.marker = [];
     }
   }, {
     key: "ready",

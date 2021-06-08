@@ -19,6 +19,9 @@ class GoogleMapApi{
         document.addEventListener('get-map-center', this.handleMapCenterRequest)
         document.addEventListener('business-search', this.handleMarkers)
         document.addEventListener('add-marker', this.handleMarker)
+
+        //clearing markers
+        document.addEventListener('clear-markers', this.clearMarkers)
         
 
     }
@@ -196,7 +199,7 @@ class GoogleMapApi{
                     
     } 
 
-    clearMarkers(){
+    clearMarkers = () => {
         this.marker.forEach(marker => {
             marker.setMap(null)
         })

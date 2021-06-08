@@ -40,7 +40,10 @@ var Main = /*#__PURE__*/function () {
       var giphyEvent = new CustomEvent('giphy-search', {
         detail: query
       });
-      document.dispatchEvent(giphyEvent);
+      document.dispatchEvent(giphyEvent); //clear markers
+
+      var clearMarkers = new CustomEvent('clear-markers');
+      document.dispatchEvent(clearMarkers);
     });
 
     _defineProperty(this, "handleResults", function (evt) {
@@ -116,13 +119,14 @@ var Main = /*#__PURE__*/function () {
 
     _defineProperty(this, "handleGifResults", function (evt) {
       var results = evt.detail;
+      var gifContainerParagraph = document.querySelector('p.gifs-go-here');
+      gifContainerParagraph.innerHTML = '';
 
       for (var i = 0; i < 3; i++) {
         // console.log('loop', i)
         var newGifImage = document.createElement('img');
         newGifImage.src = results[i].images.fixed_height.url;
         newGifImage.classList.add('gif');
-        var gifContainerParagraph = document.querySelector('p.gifs-go-here');
         gifContainerParagraph.appendChild(newGifImage);
       }
     });

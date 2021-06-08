@@ -50,6 +50,12 @@ class Main{
         const giphyEvent = new CustomEvent('giphy-search', { detail: query })
         document.dispatchEvent(giphyEvent)
 
+
+
+        //clear markers
+        const clearMarkers = new CustomEvent('clear-markers')
+        document.dispatchEvent(clearMarkers)
+
     }
 
     handleResults = (evt) => {
@@ -147,6 +153,9 @@ class Main{
        handleGifResults = (evt) =>{
             const results = evt.detail
 
+            let gifContainerParagraph = document.querySelector('p.gifs-go-here');
+            gifContainerParagraph.innerHTML= ''
+
               for (let i=0; i < 3; i++){
                     // console.log('loop', i)
 
@@ -154,10 +163,11 @@ class Main{
                 newGifImage.src= results[i].images.fixed_height.url
                 
                 newGifImage.classList.add('gif')
-                let gifContainerParagraph = document.querySelector('p.gifs-go-here')
+                
                 gifContainerParagraph.appendChild(newGifImage) 
                   
               }
+
               
        }
 
